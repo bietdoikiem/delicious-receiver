@@ -1,0 +1,8 @@
+**/node_modules
+.vscode
+
+# Environment variables
+.env.local
+.env
+.env.dev
+.env.prod
