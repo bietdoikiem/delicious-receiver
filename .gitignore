@@ -1,8 +1,15 @@
 **/node_modules
 .vscode
 
+# Build files
+backend/dist
+
+
 # Environment variables
 .env.local
 .env
 .env.dev
 .env.prod
+
+# Database file
+backend/src/db/database.json
