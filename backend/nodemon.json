@@ -1,0 +1,12 @@
+{
+  "watch": ["src"],
+  "ignore": [
+    "**/*.test.js",
+    "**/*.spec.js",
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    "src/db/database.json",
+    ".git",
+    "node_modules"
+  ]
+}
