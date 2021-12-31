@@ -6,6 +6,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+/* * Override logging * */
+
 /* * Router endpoints * */
 app.use('/victims', victimRouter);
 
