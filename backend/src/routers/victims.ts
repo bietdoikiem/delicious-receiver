@@ -96,6 +96,7 @@ router.post('/logs', (req: Request, res: Response) => {
       return res.status(400).send();
     }
   }
+  // Init new log collection
   if (index !== -1) {
     db.push(
       `/victims[${index}]/logs[]`,
