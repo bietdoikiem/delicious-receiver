@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "local": "source ../.env.local && PORT=$APP_PORT_BACKEND env $(cat ../.env.local) nodemon ./src/app.ts",
     "build": "tsc",
-    "server": "npm run build && source ../.env.prod && PORT=$APP_PORT_BACKEND env $(cat ../.env.prod) node dist/app.js"
+    "server": "npm run build && node dist/app.js"
   },
   "keywords": [],
   "author": "",
