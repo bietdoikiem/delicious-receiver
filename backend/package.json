@@ -2,7 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/app.js",
   "engines": {
     "node": "v14.17.6"
   },
@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "local": "source ../.env.local && PORT=$APP_PORT_BACKEND env $(cat ../.env.local) nodemon ./src/app.ts",
     "build": "tsc",
-    "server": "npm run build && node dist/app.js"
+    "server": "node dist/app.js"
   },
   "keywords": [],
   "author": "",
