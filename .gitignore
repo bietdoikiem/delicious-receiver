@@ -4,12 +4,17 @@
 # Build files
 backend/dist
 
+# Docker data volume
+data
+
 
 # Environment variables
 .env.local
 .env
 .env.dev
+.env.development
 .env.prod
+.env.production
 
 # Database file
 backend/src/db/database.json

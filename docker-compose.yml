@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  receiver-backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    image: receiver-backend
+    container_name: receiver-backend
+    restart: always
+    env_file:
+      - ./.env.${APP_ENV}
+    ports:
+      - 6868:${APP_PORT_BACKEND}
+    volumes:
+      - ./data/backend/db/database.json:/app/dist/db/database.json
+    networks:
+      - receiver-network-services
+
+networks:
+  receiver-network-services:
+    name: receiver-network
+    driver: bridge

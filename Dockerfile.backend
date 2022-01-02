@@ -1,0 +1,23 @@
+### Build backend ###
+FROM node:14-alpine
+
+# App's working directory
+WORKDIR /app
+
+# Copy package files
+COPY ./backend/package*.json ./
+
+# Install app dependencies
+RUN npm ci
+
+# Copy source code
+COPY ./backend ./
+
+# Build typescript
+RUN npm run build
+
+# Execute
+CMD ["npm", "run", "server"]
+
+
+
