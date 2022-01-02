@@ -25,6 +25,6 @@ app.get('/health-check', (_req: Request, res: Response) =>
 // Server Listener
 app.listen(Number(process.env.PORT), () => {
   console.log(
-    `Receiver Server is running at port ${process.env.PORT} in ${process.env.APP_ENV} environment`
+    `Receiver Server is running at port ${process.env.PORT} in ${process.env.NODE_ENV} environment`
   );
 });
