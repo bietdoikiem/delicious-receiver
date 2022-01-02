@@ -6,7 +6,7 @@ services:
     # build:
     #   context: .
     #   dockerfile: Dockerfile.backend
-    image: receiver-backend
+    image: bietdoikiem/receiver-backend
     container_name: receiver-backend
     restart: always
     env_file:
