@@ -1,12 +1,27 @@
 import { Request, Response, Router } from 'express';
 import db from '../db';
+import { Victim } from '../db/types';
 
 // Init router
 const router = Router();
 
 /* * Router Endpoints * */
 // NOTE: IP is primary key
-// TODO: Re-do logging system for Backend server
+
+// TODO: Do query victim by IP
+
+router.get('/', (req: Request, res: Response) => {
+  const { ip } = req.query;
+  let index: number = -1;
+  try {
+    index = db.getIndex('/victims', ip as string, 'ip');
+  } catch (err) {
+    console.error(err);
+    return res.status(400).send();
+  }
+  const victim = db.getObject<Victim>(`/victims[${index}]`);
+  return res.status(200).json(victim);
+});
 
 /**
  * Add/Upsert new victim

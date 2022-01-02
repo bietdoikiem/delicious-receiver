@@ -7,10 +7,9 @@
     "node": "v14.17.6"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "local": "source ../.env.local && NODE_ENV=$APP_ENV PORT=$APP_PORT_BACKEND env $(cat ../.env.local) nodemon src/app.ts",
+    "local": "source ../.env.local && NODE_ENV=development PORT=$APP_PORT_BACKEND env $(cat ../.env.local) nodemon src/app.ts",
     "build": "tsc",
-    "server": "source ../.env.prod && NODE_ENV=$APP_ENV PORT=$APP_PORT_BACKEND env $(cat ../.env.prod) node dist/app.js"
+    "server": "NODE_ENV=production PORT=$APP_PORT_BACKEND node dist/app.js"
   },
   "keywords": [],
   "author": "",

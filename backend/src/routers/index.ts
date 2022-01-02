@@ -8,6 +8,7 @@ const router = Router();
 /* * Index router * */
 router.use('/victims', victimRouter);
 router.use('/commands', commandRouter);
+
 /**
  * Check if API is running
  */
